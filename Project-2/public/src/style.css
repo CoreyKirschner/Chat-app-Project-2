@@ -1,0 +1,106 @@
+@font-face {
+    font-family: roboto;
+    src: url("./font/RobotoCondensed-BoldItalic.ttf");
+}
+
+body {
+
+    background-color: #69adf9;
+    font-family: roboto !important;
+}
+
+.header {
+    padding: 15px;
+    margin-bottom: 1rem;
+    background-color: rgb(227, 208, 70);
+}
+.header-box {
+    display: flex;
+}
+
+h1 {
+    margin: 0 1rem;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    border: solid 1px gray;
+    width: 350px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.form-control.error input {
+    border-color: red;
+}
+
+.form-control.succsecc input {
+    border-color: greenyellow;
+}
+
+.form-control small {
+    color: red;
+    bottom: 0;
+    right: 0;
+}
+
+.card-body {
+    padding: 1rem 2rem;
+}
+
+input {
+    width: 17rem;
+    height: 28px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: solid 0.5px gray;
+}
+
+.login {
+    height: 35px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #19b7f5;
+    color: #fff;
+}
+
+.signup {
+    
+    background-color: rgb(227, 208, 70);
+    border: none;
+ 
+}
+
+.signup-btm {
+    height: 35px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+span {
+    color: #707470 !important;
+}
+
+
