@@ -1,12 +1,9 @@
-@font-face {
-    font-family: roboto;
-    src: url("./font/RobotoCondensed-BoldItalic.ttf");
-}
+
 
 body {
 
     background-color: #69adf9;
-    font-family: roboto !important;
+    
 }
 
 .header {
