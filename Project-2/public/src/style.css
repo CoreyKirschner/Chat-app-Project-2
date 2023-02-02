@@ -42,8 +42,8 @@ h1 {
     border-color: red;
 }
 
-.form-control.succsecc input {
-    border-color: greenyellow;
+.form-control.succes input {
+    border-color: green
 }
 
 .form-control small {
