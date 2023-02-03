@@ -68,3 +68,22 @@
     margin-bottom: 0;
   }
   
+  .comments {
+    width: 30rem;
+    border: 3rem;
+    border-color: #727272 solid;
+    margin: 2rem 0;
+    outline: none;
+    padding: .5rem;
+    box-sizing: border-box;
+    border-color: #727272;
+    box-shadow: 0 0 8px 0 #727272;
+    transition: .4s;
+    align-items: flex-end;
+ }
+
+  .
+
+ .bi-chat-left-text{
+    align-items: flex-start;
+ }
