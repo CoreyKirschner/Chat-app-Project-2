@@ -8,6 +8,22 @@ const password2 = document.querySelector('#password2');
 form.addEventListener('submit' ,(event) => {
     event.preventDefault()
     checkInput()
+    fetch("" , {
+        method:"post" , 
+        body: {
+        email:document.getElementById("email").value , 
+        password:document.getElementById("password").value ,
+        username:document.getElementById("username").value ,
+        password2:document.getElementById("password2").value
+        }
+    })
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(text) {
+        console.log()
+    })
+    
 })
 
 const checkInput = () => {
