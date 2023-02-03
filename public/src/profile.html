@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="pstyle.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="about-section">
+          <h2>About Me</h2>
+          <p class="bio" id="bio">your bio here...</p>
+          <button class="edit-bio-btn" id="edit-bio-btn">Edit bio</button>
+        </div>
+        <div class="questions-asked-section">
+          <h2>Questions Asked</h2>
+          <ul class="questions-asked-list">
+            <li>Question 1</li>
+            <li>Question 2</li>
+          </ul>
+        </div>
+        <div class="questions-answered-section">
+          <h2>Questions Answered</h2>
+          <ul class="questions-answered-list">
+            <li>Question 1</li>
+            <li>Question 2</li>
+          </ul>
+        </div>
+      </div>
+<script>
+    const bio = document.getElementById("bio");
+    const editBtn = document.getElementById("edit-bio-btn");
+
+    // Get the bio data from local storage if it exists
+    const storedBio = localStorage.getItem("bioData");
+    if (storedBio) {
+        bio.innerHTML = storedBio;
+    }
+
+    editBtn.addEventListener("click", function() {
+    const fullName = prompt("Enter your first and last name");
+    const location = prompt("Enter your city/state");
+    const profession = prompt("Enter your profession");
+    const email = prompt("Enter your email");
+        if (fullName && location && profession && email) {
+    bio.innerHTML = `<b>Name:</b>${fullName} <b><br>Location:</b>${location} <b><br>Profession:</b>${profession} <b><br>Email:</b>${email}`;
+    localStorage.setItem("bioData", bio.innerHTML);
+  }
+});
+</script>
+</body>
+</html>
