@@ -1,66 +1,62 @@
-const form = document.querySelector('#form');
-const username = document.querySelector('#username');
-const email = document.querySelector('#email');
-const password = document.querySelector('#password');
-const password2 = document.querySelector('#password2');
 
 
-form.addEventListener('submit' ,(event) => {
-    event.preventDefault()
-    checkInput()
-    fetch("" , {
-        method:"post" , 
-        body: {
-        email:document.getElementById("email").value , 
-        password:document.getElementById("password").value ,
-        username:document.getElementById("username").value ,
-        password2:document.getElementById("password2").value
-        }
-    })
-    .then(function(response) {
-        return response.json()
-    })
-    .then(function(text) {
-        console.log()
-    })
-    
-})
-
-const checkInput = () => {
-    const usernameValue = username.value.trim()
-    const emailValue = email.value.trim()
-    const passwordValue = password.value.trim()
-    const password2Value = password2.value.trim()
-    if(usernameValue === '') {
-        setError(username , 'please enter the username')
-    } else {
-        setSucces(username)
-    }
-    if(emailValue === '') {
-        setError(email , 'please enter the email')
-    } else {
-        setSucces(email)
-    }
-    if(passwordValue === '') {
-        setError(password , 'please enter the password')
-    } else {
-        setSucces(password)
-    }
-    if(password2Value === '') {
-        setError(password2 , 'please re-enter the password')
-    } else if(passwordValue !== password2Value) {
-        setError(password2 , 'it is the wrong password')
-    } else {
-        setSucces(password2)
-    }
-}
-const setError = (input , message) => {
-    const formControl = input.parentElement
-    const small = formControl.querySelector('small')
-    formControl.className = 'form-control error'
-    small.innerText = message
-}
-const setSucces = (input) => {
-    const formControl = input.parentElement
-    formControl.className = 'form-control succes'
-}
+// var createError = require('http-errors');
+// var express = require('express');
+// var path = require('path');
+// var cookieParser = require('cookie-parser');
+// var logger = require('morgan');
+// var expressValidator = require('express-validator');
+// var flash = require('express-flash');
+// var session = require('express-session');
+// var bodyParser = require('body-parser');
+ 
+ 
+// var mysql = require('mysql');
+// var connection  = require('./lib/db');
+ 
+// var authRouter = require('./routes/auth');
+ 
+// var app = express();
+ 
+// // view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
+ 
+// app.use(logger('dev'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, 'public')));
+ 
+// app.use(session({ 
+//     secret: '123456cat',
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { maxAge: 60000 }
+// }))
+ 
+// app.use(flash());
+// app.use(expressValidator());
+ 
+// app.use('/auth', authRouter);
+ 
+// // catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
+ 
+// // error handler
+// app.use(function(err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
+ 
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
+// // port must be set to 3000 because incoming http requests are routed from port 80 to port 8080
+// app.listen(3000, function () {
+//     console.log('Node app is running on port 3000');
+// });
+// module.exports = app;
