@@ -1,15 +1,15 @@
 const router = require("express").Router();
-const { Chat } = require("../../models");
+const { Response } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
   try {
-    const newQuestion = await Chat.create({
+    const newResponse = await Response.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newQuestion);
+    res.status(200).json(newResponse);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,19 +17,19 @@ router.post("/", withAuth, async (req, res) => {
 
 router.delete("/:id", withAuth, async (req, res) => {
   try {
-    const projectData = await Chat.destroy({
+    const response = await Response.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: "No project found with this id!" });
+    if (!response) {
+      res.status(404).json({ message: "No response found with this id!" });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(response);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -37,7 +37,7 @@ router.delete("/:id", withAuth, async (req, res) => {
 
 router.put("/:id", withAuth, async (req, res) => {
   try {
-    const [affectedRows] = await Chat.update(req.body, {
+    const [affectedRows] = await Response.update(req.body, {
       where: {
         id: req.params.id,
       },

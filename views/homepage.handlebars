@@ -1,0 +1,167 @@
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Question Hub</h1>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      </h3>
+      <!-- sample post -->
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">What is a for loop in javascript?</h2>
+        <p class="blog-post-meta">January 1, 2021 by <a href="#">Napoleon Dynamite</a></p>
+
+        <p>A for loop repeats until a specified condition evaluates to false. The JavaScript for 
+          loop is similar to the Java and C for loop. A for statement looks as follows: for (initialization; 
+          condition; afterthought) statement.</p>
+        <hr>
+        <h2>Example</h2>
+        <pre>function countSelected(selectObject) {
+          let numberSelected = 0;
+          for (let i = 0; i < selectObject.options.length; i++) {
+            if (selectObject.options[i].selected) {
+              numberSelected++;
+            }
+          }
+          return numberSelected;
+        }
+        
+        const btn = document.getElementById("btn");
+        
+        btn.addEventListener("click", () => {
+          const musicTypes = document.selectForm.musicTypes;
+          console.log(`You have selected ${countSelected(musicTypes)} option(s).`);
+        });
+        </pre>
+        <blockquote class="blockquote">
+          <p>Feel free to leave a comment for any other questions regarding JavaScript</p>
+        </blockquote>
+  
+      <div class = 'comments'>
+        <input type ="text" placeholder="Add a Comment!">
+      </div>
+
+      <!-- sample post -->
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">Sample Post 2</h2>
+        <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
+
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <blockquote>
+          <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
+        </blockquote>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <h3>Example table</h3>
+        <p>And don't forget about tables in these posts:</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Upvotes</th>
+              <th>Downvotes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>10</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>4</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Charlie</td>
+              <td>7</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Totals</td>
+              <td>21</td>
+              <td>23</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+      </article>
+      
+      <div class = 'comments'>
+        <input type ="text" placeholder="Add a Comment!">
+      </div>
+
+      <!-- sample post -->
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">Sample post 3</h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
+
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <ul>
+          <li>First list item</li>
+          <li>Second list item with a longer description</li>
+          <li>Third list item to close it out</li>
+        </ul>
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+      </article>
+      
+      <div class = 'comments'>
+        <input type ="text" placeholder="Add a Comment!">
+      </div>
+
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+        <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
+      </nav>
+      
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">Designed for users to communicate about problems, this app allows individuals from all over to create profiles 
+            and access each other’s forums to discuss solutions and feedback. An app that is structured like a question forum which allows 
+            users to post inquiries and receive probable solutions. Functionality of a message board where many individuals are able to 
+            use this app as a resource in their everyday life, with either curriculum, work related issues, or to use as social interaction 
+            with anyone that has created a profile within.</p>
+        </div>
+
+        <!-- <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">New Post</a></li>
+            <li><a href="#">Back to Top</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Discover</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">October 2020</a></li>
+            <li><a href="#">September 2020</a></li>
+            <li><a href="#">August 2020</a></li>
+            <li><a href="#">July 2020</a></li>
+            <li><a href="#">June 2020</a></li>
+            <li><a href="#">May 2020</a></li>
+            <li><a href="#">April 2020</a></li>
+          </ol>
+        </div> -->
+
+        <div class="p-4">
+          <h4 class="fst-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
