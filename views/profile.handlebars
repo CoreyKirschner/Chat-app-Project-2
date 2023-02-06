@@ -1,0 +1,25 @@
+<script type="text/x-handlebars-template" id="profile-template">
+  <div class="profile-container">
+    <div class="about-section">
+      <h2>About Me</h2>
+      <p class="bio" id="bio">{{bio}}</p>
+      <button class="edit-bio-btn" id="edit-bio-btn">Edit bio</button>
+    </div>
+    <div class="questions-asked-section">
+      <h2>Questions Asked</h2>
+      <ul class="questions-asked-list">
+        {{#each questionsAsked}}
+        <li><a href="#">{{this}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="questions-answered-section">
+      <h2>Questions Answered</h2>
+      <ul class="questions-answered-list">
+        {{#each questionsAnswered}}
+        <li><a href="#">{{this}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</script>

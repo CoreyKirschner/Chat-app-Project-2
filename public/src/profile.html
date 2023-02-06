@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="pstyle.css">
+    <link rel="stylesheet" type="text/css" href="profile-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"></script>
 </head>
 <body>
+  <div id="profile-template">
     <div class="profile-container">
         <div class="about-section">
           <h2>About Me</h2>
@@ -16,7 +18,7 @@
         </div>
         <div class="questions-asked-section">
           <h2>Questions Asked</h2>
-          <ul class="questions-asked-list">
+          <ul id="questions-asked-list" class="questions-asked-list">
             <li>Question 1</li>
             <li>Question 2</li>
           </ul>
@@ -29,6 +31,8 @@
           </ul>
         </div>
       </div>
+  </div>
+
 <script>
     const bio = document.getElementById("bio");
     const editBtn = document.getElementById("edit-bio-btn");
@@ -47,8 +51,104 @@
         if (fullName && location && profession && email) {
     bio.innerHTML = `<b>Name:</b>${fullName} <b><br>Location:</b>${location} <b><br>Profession:</b>${profession} <b><br>Email:</b>${email}`;
     localStorage.setItem("bioData", bio.innerHTML);
-  }
+    }
 });
+
+// Need the database that stores the questions and answers for each user
+// true = questions asnwered
+// false = questions asked
+const userId = "24";
+const questionsDb = [
+  {
+    id: 1,
+    userId: "24",
+    question: "Question 1",
+    answered: false
+  },
+  {
+    id: 2,
+    userId: "24",
+    question: "Question 1",
+    answered: true
+  },
+];
+
+// Get the questions asked and answered by the current user
+const questionsAsked = questionsDb.filter(
+  question => question.userId === userId && !question.answered
+);
+const questionsAnswered = questionsDb.filter(
+  question => question.userId === userId && question.answered
+);
+
+// Function to display the questions asked by the user
+function displayQuestionsAsked() {
+  const questionsAskedList = document.querySelector(".questions-asked-list");
+  questionsAskedList.innerHTML = "";
+  questionsAsked.forEach(question => {
+    const questionItem = document.createElement("li");
+    questionItem.innerHTML = `<a href="#question-${question.id}">${question.question}</a>`;
+    questionsAskedList.appendChild(questionItem);
+  });
+}
+
+// Function to display the questions answered by the user
+function displayQuestionsAnswered() {
+  const questionsAnsweredList = document.querySelector(".questions-answered-list");
+  questionsAnsweredList.innerHTML = "";
+  questionsAnswered.forEach(question => {
+    const questionItem = document.createElement("li");
+    questionItem.innerHTML = `<a href="#question-${question.id}">${question.question}</a>`;
+    questionsAnsweredList.appendChild(questionItem);
+  });
+}
+
+// Call the display functions when the page loads
+window.addEventListener("load", function() {
+  displayQuestionsAsked();
+  displayQuestionsAnswered();
+});
+
+var template = Handlebars.compile(document.getElementById("profile-template"));
 </script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="profile-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+<body>
+  <div id="profile-template"></div>
+
+<script>
+
+const userId = "24";
+const database = {"24": {
+  questionsAsked: [
+    { id: 1, question: "Question 1" },
+    { id: 2, question: "Question 2" }
+],
+  questionsAnswered: [
+    { id: 3, question: "Question 1" },
+    { id: 4, question: "Question 2" }
+]
+}
+};
+
+const questionsData = database[userId];
+const template = document.getElementById("profile-template").innerHTML;
+const compileTemplate = Handlebars.compile(template);
+const html = compileTemplate(questionsData);
+
+document.getElementById("target").innerHTML = html;
+bio.innerHTML = bioData;
+</script>
+</body>
+</html> -->
