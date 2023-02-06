@@ -11,15 +11,16 @@ WHEN I post a question
 THEN other users can comment an answer
 
 ## Technologies Used
-CSS
-HTML
-JavaScript
+Node
+NPM
+Sequelize
+MySQL
 Shell
 Handlebars
 Heroku
 API
 JSON
-Tailwind
+Bootstrap
 
 ## Screenshots/Display
 
