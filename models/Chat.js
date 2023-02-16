@@ -20,6 +20,10 @@ Chat.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    userId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,

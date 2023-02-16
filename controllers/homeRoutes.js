@@ -20,10 +20,13 @@ router.get("/chat", async (req, res) => {
 
 router.get("/profile", withAuth, async (req, res) => {
   try {
+    console.log(req.session.userId);
     const chatData = await Chat.findAll({
       where: { userId: req.session.userId },
     });
+    console.log(chatData);
     const chat = chatData.map((chat) => chat.get({ plain: true }));
+    console.log("chat", chat);
     res.render("profile", { chat });
   } catch (err) {
     res.status(400).json(err.message);
