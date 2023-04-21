@@ -2,8 +2,8 @@ var mysql=require('mysql');
  var connection=mysql.createConnection({
    host:'localhost',
    user:'root',
-   password:'your password',
-   database:'myapp'
+   password:'password',
+   database:'chat_app_db'
  });
 connection.connect(function(error){
    if(!!error){
