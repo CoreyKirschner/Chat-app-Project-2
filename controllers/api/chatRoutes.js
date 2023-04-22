@@ -41,6 +41,7 @@ router.put("/:id", withAuth, async (req, res) => {
     const [affectedRows] = await Chat.update(req.body, {
       where: {
         id: req.params.id,
+        userId: req.session.userId
       },
     });
 
