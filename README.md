@@ -9,6 +9,10 @@ The Chat App is a technology designed for all different types of users looking t
  THEN The user can comment back to the response
  WHEN I post a question
  THEN other users can comment an answer
+ 
+# Usage
+
+ In the project directory, first install dependencies with 'npm install' and then to run the application on localhost:3002, input 'node server.js'.
 
 # Technologies Used
   Node
