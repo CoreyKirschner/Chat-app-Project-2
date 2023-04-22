@@ -3,28 +3,28 @@ const User = require('./User');
 const Response = require('./Response');
 
 Chat.belongsTo(User, {
-    foreignKey: 'userId',
+    foreignKey: 'user_id',
 
 })
 
 User.hasMany(Chat, {
-    foreignKey: 'userId',
+    foreignKey: 'user_id',
 })
 
 Chat.hasMany(Response, {
-    foreignKey: 'chatId',
+    foreignKey: 'chat_id',
 })
 
 Response.belongsTo(Chat, {
-    foreignKey: 'chatId',
+    foreignKey: 'chat_id',
 })
 
 User.hasMany(Response, {
-    foreignKey: 'userId',
+    foreignKey: 'user_id',
 })
 
 Response.belongsTo(User, {
-    foreignKey: 'userId',
+    foreignKey: 'user_id',
 })
 
 module.exports = {User, Response, Chat}
