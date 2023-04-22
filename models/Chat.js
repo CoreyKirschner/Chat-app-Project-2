@@ -23,6 +23,10 @@ Chat.init(
     userId: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: "User",
+        key: "id",
+      },
     },
   },
   {
