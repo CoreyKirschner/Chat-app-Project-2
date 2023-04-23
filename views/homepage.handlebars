@@ -4,38 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Message Board</title>
+    <title>The Chat App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
   </head>
-  <body class="bg-light">
-    <main class="container">
-      <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+  <body style="background-color: #f2f2f2; font-family: Arial, sans-serif; line-height: 1.5;">
+    <main class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+      <div class="p-4 p-md-5 mb-4 rounded text-bg-dark" style="background-color: #fff; color: #333;">
         <div class="col-md-6 px-0">
-          <h1 class="display-4 fst-italic">Message Board</h1>
+          <h1 class="display-4 fst-italic" style="font-size: 2.5rem;">The Chat App</h1>
         </div>
       </div>
-        <div id="questionInput" class="mb-3">
-    <h3 class="pb-4 mb-4 fst-italic border-bottom">Leave a message:</h3>
-    <form id="questionForm">
-      <div class="mb-3">
-        <label for="questionTitle" class="form-label">Title</label>
-        <input type="text" class="form-control" id="questionTitle" placeholder="Enter title" required>
+      <div id="questionInput" class="mb-3">
+        <h3 class="pb-4 mb-4 fst-italic border-bottom" style="font-size: 1.5rem;">Leave a message:</h3>
+        <form id="questionForm">
+          <div class="mb-3">
+            <label for="questionTitle" class="form-label" style="font-size: 1.2rem; font-weight: bold;">Title</label>
+            <input type="text" class="form-control" id="questionTitle" placeholder="Enter title" required style="font-size: 1rem; padding: 10px; border-radius: 5px;">
+          </div>
+          <div class="mb-3">
+            <label for="questionContent" class="form-label" style="font-size: 1.2rem; font-weight: bold;">Message</label>
+            <textarea class="form-control" id="questionContent" rows="5" placeholder="Enter message" required style="font-size: 1rem; padding: 10px; border-radius: 5px;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="background-color: #007bff; border: none; padding: 10px 20px; border-radius: 5px;">Submit</button>
+        </form>
       </div>
-      <div class="mb-3">
-        <label for="questionContent" class="form-label">Message</label>
-        <textarea class="form-control" id="questionContent" rows="5" placeholder="Enter message" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
 
-  <div id="messageBoard" class="row g-5">
-    <div class="col-md-8">
-      <h3 class="pb-4 mb-4 fst-italic border-bottom">Messages:</h3>
-      <div id="messageList"></div>
-    </div>
-  </div>
-</main>
+      <div id="messageBoard" class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom" style="font-size: 1.5rem;">Messages:</h3>
+          <div id="messageList"></div>
+        </div>
+      </div>
+    </main>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
