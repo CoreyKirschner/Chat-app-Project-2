@@ -12,7 +12,7 @@ The Chat App is a technology designed for all different types of users looking t
  
 # Usage
 
- In the project directory, first install dependencies with 'npm install' and then to run the application on localhost:3002, input 'node server.js'.
+ In the project directory, first install dependencies with 'npm install' and then to run the application on localhost:3000, input 'node server.js'.
 
 # Technologies Used
   Node
